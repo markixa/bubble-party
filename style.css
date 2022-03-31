@@ -1,0 +1,33 @@
+* {
+    background-color: #b3f0ff;
+}
+
+
+.splash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    row-gap: 20px;
+    margin: 100px 0px;
+}
+
+.arrows {
+    width: 120px;
+}
+
+.instructions {
+    width: 700px;
+}
+
+#play-btn {
+    background-color: #c6e2c0;
+    border-radius: 10%;
+    opacity: 0.5;
+    transition: transform .2s;
+}
+
+#play-btn:hover {
+    transform: scale(1.5);
+    opacity: 0.8;
+}

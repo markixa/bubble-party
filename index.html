@@ -4,18 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
     <title>Bubble 💗 Party </title>
 </head>
 <body>
     <!--splash screen-->
-    <div>
-        <img src="images\MainScreen.png" alt="main screen logo">
-    </div>
-    <div>
-        <img src="images\PlayButtonCheri.png" alt="play button">
-    </div>
-    <!--game screen-->
+    <section class="first-screen">
+        <div class="splash">
+            <img src="images\MainScreen.png" alt="main screen logo">
+            
+            <!--put instructions in here-->
+            <img class="arrows" src="images\arrows.png" alt="play buttons">
+            <img class="instructions" src="images\instructions.png" alt="instructions">
+            <!-- <img src="images\PlayButton.png" alt="play button"> -->
+            <input type="image" id="play-btn" alt="play button" src="images\PlayButton.png">
+        </div>
+        <canvas id="bubbles"> </canvas>
+    </section>
 
+
+
+
+    <!--game screen-->
+    <div id="game">
+
+    </div>
+
+
+
+    
     <!--game over screen-->
+
+
+
+    <script> src="splash.js" </script>
 </body>
 </html>
