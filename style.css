@@ -1,14 +1,12 @@
 * {
-    /* background-color: #b3f0ff; */
-    animation: gradient 10s infinite alternate linear;
     background: hsl(225, 36%, 70%);
 }
- @keyframes gradient {
-     100%{
-         background: hsl(295, 38%, 41%);
-     }
+
+body{
+     overflow: hidden;
  }
 
+/* start screen */
 
 .splash {
     display: flex;
@@ -32,6 +30,12 @@
     border-radius: 10%;
     opacity: 0.5;
     transition: transform .2s;
+    padding: 0;
+    border-color: none;
+    border: none;
+    outline: none !important;
+    box-shadow: none !important;
+    outline-style: none;
 }
 
 #play-btn:hover {
@@ -54,3 +58,22 @@
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
+
+  /* start screen */
+
+
+  /* game screen */
+
+  #gameCanvas{
+    /* background: rgba(255, 255, 255, 0.864); */
+    background-image: url("images/bathtub.png");
+    background-size: 1000px 800px;
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    display: block;
+    border-radius: 3%;
+  }
+  
+
+    /* game screen */
