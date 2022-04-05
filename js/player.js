@@ -2,8 +2,8 @@ class Player {
 	constructor(canvas, ctx){
 		this.canvas=canvas;
 		this.ctx=ctx;
-		this.playerPos={x:500, y:700}
-		this.playerSize={w: 100, h:100}
+		this.playerPos={x:500,y:690}
+		this.playerSize={w:100,h:100}
 		this.playerVel=10;
 		this.image=null;
 		this.init()

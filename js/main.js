@@ -14,7 +14,8 @@ const ctx=canvas.getContext("2d");
 
 let playboard,
     player,
-    intervalId;
+    intervalId,
+    bubbleArray=[];
 
 let splashScreen=document.querySelector(".first-screen");
 let gameScreen=document.querySelector(".game-screen");
@@ -26,6 +27,8 @@ function startGame(){
     console.log('Button working');
     playboard = new Playboard(canvas, ctx);
     player=new Player(canvas, ctx);
+    bubble=new FallingBubbles(canvas, ctx);
+    bubbleArray.push(bubble);
     update();
 }
 
@@ -36,11 +39,16 @@ function startGame(){
 	}
 intervalId = requestAnimationFrame(update); */
 
-
+//posar un comptador de frames
+//fer que les bubbles surtin cada x frames (menys frames)
 function update(){
     intervalId = setInterval (()=>{
         clear();
-        player.draw();
+        player.draw();        
+        bubbleArray.forEach((element) => {
+            element.move();
+            element.draw();
+        });
     },1000/50);
 }
 
