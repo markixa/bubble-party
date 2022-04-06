@@ -32,13 +32,6 @@ function startGame(){
     update();
 }
 
-/* function update() {
-    clear();
-    //background.draw();
-	player.draw();
-	}
-intervalId = requestAnimationFrame(update); */
-
 //posar un comptador de frames
 //fer que les bubbles surtin cada x frames (menys frames)
 function update(){

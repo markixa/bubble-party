@@ -49,7 +49,6 @@ class FallingBubbles {
 
     draw(){
 		this.ctx.drawImage(this.randomImg(), this.bubblePos.x, this.bubblePos.y, this.bubbleSize.w, this.bubbleSize.h);
-        console.log(this.img);
 	}
 
 	move() {
@@ -60,18 +59,18 @@ class FallingBubbles {
 
 
     randomImg(){
-        return this.bubbleImgArr[Math.floor(Math.random()*this.bubbleImgArr.length)]
+        return this.bubbleImgArr[Math.floor(Math.random()*this.bubbleImgArr.length)];
     }
 
     randomX(){
-        return Math.floor(Math.random()*(990 - 10) + 10);
+        return Math.floor(Math.random()*(950 - 50) + 50);
     }
 
     randomSize(){
-        return Math.floor(Math.random()+(50-20)+20);
+        return Math.floor(Math.random()+(60-30)+30);
     }
 
     setSpeed(){
-        return 5;
+        return 4;
     }
 }
