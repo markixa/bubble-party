@@ -35,9 +35,17 @@ function startGame(){
 //posar un comptador de frames
 //fer que les bubbles surtin cada x frames (menys frames)
 function update(){
+    //frame counter
+    let frameCounter=0;
     intervalId = setInterval (()=>{
         clear();
-        player.draw();        
+        player.draw();
+        if(frameCounter==setLevelSpeed()){
+            bubbleArray.push(bubble);
+            console.log(bubbleArray);
+            frameCounter=0;
+        }
+        frameCounter+=1;
         bubbleArray.forEach((element) => {
             element.move();
             element.draw();
@@ -47,6 +55,12 @@ function update(){
 
 function clear() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function setLevelSpeed(){
+    //function that increments bubble outing speed when level goes up
+    //every level up, bubble outing time decreases
+    return 100;
 }
 
 window.addEventListener("keydown", (event) => {
@@ -59,6 +73,9 @@ window.addEventListener("keydown", (event) => {
             break;
     }
 })
+
+//set collisions
+
 /* 
 
 

@@ -52,6 +52,7 @@ class FallingBubbles {
 	}
 
 	move() {
+        //increase speed every level up
 		this.bubblePos.y += this.bubbleVel;
 	}
 
