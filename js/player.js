@@ -12,6 +12,7 @@ class Player {
 	init(){
 		this.image=new Image();
 		this.image.src="../images/cuteBabyLeft.png";
+		
 	}
 
 	draw(){

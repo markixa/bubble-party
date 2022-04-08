@@ -11,11 +11,13 @@ class FallingBubbles {
     }
 
     init(){
-        this.addImages();
-        /* this.img=this.randomImg(); */
+        //this.addImages();
+        /* this.img=this.randomImg(); */      
+        this.img =new Image();
+        this.img.src=`../images/bubbles/bub${Math.floor(Math.random()*7)+1}.png`;
     }
 
-    addImages(){
+  /*   addImages(){
         let image1=new Image();
         image1.src="../images/bubbles/bub1.png"
         this.bubbleImgArr.push(image1);
@@ -43,16 +45,15 @@ class FallingBubbles {
         let image7=new Image();
         image1.src="../images/bubbles/bub7.png"
         this.bubbleImgArr.push(image7);
-    }
+    } */
 
     
 
     draw(){
-		this.ctx.drawImage(this.randomImg(), this.bubblePos.x, this.bubblePos.y, this.bubbleSize.w, this.bubbleSize.h);
+		this.ctx.drawImage(this.img, this.bubblePos.x, this.bubblePos.y, this.bubbleSize.w, this.bubbleSize.h);
 	}
 
 	move() {
-        //increase speed every level up
 		this.bubblePos.y += this.bubbleVel;
 	}
 
@@ -72,6 +73,11 @@ class FallingBubbles {
     }
 
     setSpeed(){
-        return 4;
+        let speed=1;
+        if(scoreCount%200==0){
+            level++;
+            speed++;
+        }
+        return speed;
     }
 }
