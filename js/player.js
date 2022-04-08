@@ -5,18 +5,28 @@ class Player {
 		this.playerPos={x:500,y:690}
 		this.playerSize={w:100,h:100}
 		this.playerVel=10;
-		this.image=null;
+		//this.image=null;
+		this.imageRight=null;
+		this.imageLeft=null;
+		this.side="right"
 		this.init()
 	}
 
+	//create two images
+	//altern them with the boolean on keydown event
+	//this.imgL=new Image();
+	//this.imgR=new Image();
 	init(){
-		this.image=new Image();
-		this.image.src="../images/cuteBabyLeft.png";
-		
+		//this.image=new Image();
+		//this.image.src="../images/cuteBabyLeft.png";
+		this.imageRight=new Image;
+		this.imageRight.src="../images/cuteBabyRight.png"
+		this.imageLeft=new Image;
+		this.imageLeft.src="../images/cuteBabyLeft.png"
 	}
 
 	draw(){
-		this.ctx.drawImage(this.image, this.playerPos.x, this.playerPos.y, this.playerSize.w, this.playerSize.h)
+		this.ctx.drawImage(this.side === "right" ? this.imageRight : this.imageLeft, this.playerPos.x, this.playerPos.y, this.playerSize.w, this.playerSize.h)
 	}
 
 	moveLeft(){
@@ -30,36 +40,4 @@ class Player {
 			this.playerPos.x+=this.playerVel;
 		}
 	}
-/* 	constructor() {
-		this.image=null;
-		this.playerVel=2;
-		this.width=50;
-		this.height=20;		
-		this.x = (canvas.width - this.width) / 2;
-        this.y=canvas.height-this.width;
-		this.init();
-	}
-
-	init(){
-		this.image=new Image();
-		this.image.src="images/cuteBabyLeft.png";
-	}
-
-	draw(){
-		if(this.image){
-			ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
-		}
-	}
-
-	moveLeft(){
-		if (this.x>0) {
-			this.x-=this.playerVel;
-		}
-	}
-
-	moveRight() {
-		if (this.x<this.canvas.width-this.width){
-			this.x+=this.playerVel;
-		}
-	} */
 }

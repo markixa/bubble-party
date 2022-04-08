@@ -19,7 +19,8 @@ let playboard,
     bubbleArray=[],
     frameCount=0,
     scoreCount=0,
-    level=0;
+    level=0,
+    restartDelay;
 
 let splashScreen=document.querySelector(".first-screen");
 let gameScreen=document.querySelector(".game-screen");
@@ -40,25 +41,27 @@ function startGame(){
 //fer que les bubbles surtin cada x frames (menys frames)
 
 function update(){  
-        clear();
-        frameCount++;
-        player.draw();
-        if ((frameCount/20)%20==0) {
-            bubbleArray.push(new FallingBubbles(canvas, ctx));
-        }
-        for(let i=0; i<bubbleArray.length; i++){
-                bubbleArray[i].move();
-                bubbleArray[i].draw();
-        }
-        scoreShow();
-        levelShow();    
+    clear();
+    frameCount++;
+    player.draw();
+    if ((frameCount/20)%20==0) {
+        bubbleArray.push(new FallingBubbles(canvas, ctx));
+    }
+    for(let i=0; i<bubbleArray.length; i++){
+            bubbleArray[i].move();
+            bubbleArray[i].draw();
+    }
+    scoreShow();
+    levelShow();    
 
     if(bubbleBurst()){
         
     }
 
-    if(bubbleBottomTouch()){
+    if(bubbleBottomTouch()){        
+        reset();  
         endScreen();
+
     }    
     
     intervalId=requestAnimationFrame(update);
@@ -68,13 +71,17 @@ function clear() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+
+
 window.addEventListener("keydown", (event) => {
     switch (event.key) {
         case "ArrowLeft":
-            player.moveLeft()
+            player.side="left";
+            player.moveLeft();
             break;
         case "ArrowRight":
-            player.moveRight()
+            player.side="right";
+            player.moveRight();
             break;
     }
 })
@@ -99,9 +106,9 @@ function bubbleBottomTouch() {
 function bubbleBurst(){
     let burst=false;
     for(let i=0; i<bubbleArray.length; i++){
-        if(bubbleArray[i].bubblePos.y==player.playerPos.x){
-            burst=true;
-        }   
+        const withinX = bubbleArray[i].bubblePos.x+bubbleArray[i].bubbleSize.w >= player.playerPos.x && player.playerPos.x + player.playerSize.w >= (bubbleArray[i].bubblePos.x + bubbleArray[i].bubbleSize.w);
+        const withinY = bubbleArray[i].bubblePos.y+bubbleArray[i].bubbleSize.w >= player.playerPos.y && player.playerPos.y + player.playerSize.h >= (bubbleArray[i].bubblePos.y + bubbleArray[i].bubbleSize.w);
+        burst=withinX && withinY;
         if(burst){
             bubbleArray.splice(i);
             break;
@@ -119,7 +126,7 @@ function scoreShow(){
 }
 
 function calculateScore(){
-    scoreCount=setInterval(scoreCount++,1);
+    setInterval(scoreCount++,2000);
     return scoreCount;
 }
 
@@ -131,7 +138,7 @@ function levelShow(){
 }
 
 function calculateLevel(){
-    if(scoreCount%100==0){
+    if(scoreCount%500==0){
         level++;
     }
     return level;
@@ -140,18 +147,18 @@ function calculateLevel(){
 //transfer to game over screen
 document.getElementById("game-over-btn").addEventListener("click", endScreen);
 
-function endScreen(){
+function endScreen(){    
     gameScreen.style.display="none";
-    gameOverScreen.style.display="block";
+    gameOverScreen.style.display="block"; 
 }
 
 //transfer to splash screen
 document.getElementById("restart-btn").addEventListener("click", restartScreen);
  
+
 function restartScreen(){
     gameOverScreen.style.display="none";
     splashScreen.style.display="block";
-    reset();
 }
 
 function reset() {
