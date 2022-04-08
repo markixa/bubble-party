@@ -157,6 +157,7 @@ document.getElementById("restart-btn").addEventListener("click", restartScreen);
  
 
 function restartScreen(){
+    console.log("button working");
     gameOverScreen.style.display="none";
     splashScreen.style.display="block";
 }
