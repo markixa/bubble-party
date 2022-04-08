@@ -26,10 +26,16 @@ let splashScreen=document.querySelector(".first-screen");
 let gameScreen=document.querySelector(".game-screen");
 let gameOverScreen=document.querySelector(".end-screen");
 
+const music=new Audio('../audio/bubblesAudio.mp3');
+const outMusic=new Audio('../audio/outMusic.mp3')
+
 function startGame(){        
     splashScreen.style.display="none";
     gameScreen.style.display="block";
     console.log('Button working');
+    music.play();
+    music.loop=true;
+    music.playbackRate=1;
     playboard=new Playboard(canvas, ctx);
     player=new Player(canvas, ctx);
     bubble=new FallingBubbles(canvas, ctx);
@@ -148,6 +154,10 @@ function calculateLevel(){
 document.getElementById("game-over-btn").addEventListener("click", endScreen);
 
 function endScreen(){    
+    music.pause();
+    outMusic.play();
+    outMusic.loop=false;
+    outMusic.playbackRate=1;
     gameScreen.style.display="none";
     gameOverScreen.style.display="block"; 
 }
