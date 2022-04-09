@@ -12,7 +12,7 @@ class FallingBubbles {
 
     init(){     
         this.img =new Image();
-        this.img.src=`../images/bubbles/bub${Math.floor(Math.random()*7)+1}.png`;
+        this.img.src=`/images/bubbles/bub${Math.floor(Math.random()*7)+1}.png`;
     }
 
     draw(){

@@ -26,8 +26,8 @@ let splashScreen=document.querySelector(".first-screen");
 let gameScreen=document.querySelector(".game-screen");
 let gameOverScreen=document.querySelector(".end-screen");
 
-const music=new Audio('../audio/bubblesAudio.mp3');
-const outMusic=new Audio('../audio/outMusic.mp3')
+const music=new Audio('/audio/bubblesAudio.mp3');
+const outMusic=new Audio('audio/outMusic.mp3')
 
 function startGame(){        
     splashScreen.style.display="none";
@@ -158,7 +158,6 @@ function endScreen(){
     gameOverScreen.style.display="block"; 
     music.pause();
     outMusic.play();
-    outMusic.volume=1.2;
     outMusic.loop=false;
     outMusic.playbackRate=1;
 }

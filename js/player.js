@@ -20,9 +20,9 @@ class Player {
 		//this.image=new Image();
 		//this.image.src="../images/cuteBabyLeft.png";
 		this.imageRight=new Image;
-		this.imageRight.src="../images/cuteBabyRight.png"
+		this.imageRight.src="/images/cuteBabyRight.png"
 		this.imageLeft=new Image;
-		this.imageLeft.src="../images/cuteBabyLeft.png"
+		this.imageLeft.src="/images/cuteBabyLeft.png"
 	}
 
 	draw(){
