@@ -104,4 +104,11 @@ body{
     outline-style: none;
 }
 
+#restart-btn:hover {
+    transform: scale(1.5);
+    opacity: 0.8;
+    animation: shake 0.5s; 
+    animation-iteration-count: 1;
+}
+
     /*end screen*/

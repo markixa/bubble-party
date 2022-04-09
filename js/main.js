@@ -34,6 +34,7 @@ function startGame(){
     gameScreen.style.display="block";
     console.log('Button working');
     music.play();
+    music.volume=0.2;
     music.loop=true;
     music.playbackRate=1;
     playboard=new Playboard(canvas, ctx);
@@ -151,15 +152,15 @@ function calculateLevel(){
 }
 
 //transfer to game over screen
-document.getElementById("game-over-btn").addEventListener("click", endScreen);
 
 function endScreen(){    
-    music.pause();
-    outMusic.play();
-    outMusic.loop=false;
-    outMusic.playbackRate=1;
     gameScreen.style.display="none";
     gameOverScreen.style.display="block"; 
+    music.pause();
+    outMusic.play();
+    outMusic.volume=1.2;
+    outMusic.loop=false;
+    outMusic.playbackRate=1;
 }
 
 //transfer to splash screen
