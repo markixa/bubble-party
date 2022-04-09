@@ -12,7 +12,7 @@ class FallingBubbles {
 
     init(){     
         this.img =new Image();
-        this.img.src=`/images/bubbles/bub${Math.floor(Math.random()*7)+1}.png`;
+        this.img.src=`images/bubbles/bub${Math.floor(Math.random()*7)+1}.png`;
     }
 
     draw(){
@@ -37,11 +37,6 @@ class FallingBubbles {
 
     setSpeed(){
         let speed=2;
-        console.log(speed)
-/*         if(scoreCount%200==0){
-            level++;
-            speed++;
-        } */
         return speed;
     }
 }

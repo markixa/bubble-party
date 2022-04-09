@@ -26,7 +26,7 @@ let splashScreen=document.querySelector(".first-screen");
 let gameScreen=document.querySelector(".game-screen");
 let gameOverScreen=document.querySelector(".end-screen");
 
-const music=new Audio('/audio/bubblesAudio.mp3');
+const music=new Audio('audio/bubblesAudio.mp3');
 const outMusic=new Audio('audio/outMusic.mp3')
 
 function startGame(){        
@@ -43,9 +43,6 @@ function startGame(){
     bubbleArray.push(bubble);
     update();
 }
-
-//posar un comptador de frames
-//fer que les bubbles surtin cada x frames (menys frames)
 
 function update(){  
     clear();
@@ -167,7 +164,6 @@ document.getElementById("restart-btn").addEventListener("click", restartScreen);
  
 
 function restartScreen(){
-    console.log("button working");
     gameOverScreen.style.display="none";
     splashScreen.style.display="block";
 }

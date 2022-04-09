@@ -14,8 +14,6 @@
             <img src="images/MainScreen.png" alt="main screen logo">
             <img class="arrows" src="images/arrows.png" alt="play buttons">
             <img class="instructions" src="images/instructions.png" alt="instructions">
-            <!-- <img src="images\PlayButton.png" alt="play button"> -->
-            <!-- <input type="image" class="play-btn" alt="play button" src="images\PlayButton.png"> -->
             <button>
                 <img id="play-btn" src="images/PlayButton.png" alt="play button">
              </button>
@@ -24,31 +22,28 @@
 
     <!--game screen-->
     <section class="game-screen">
-        <!-- <audio src="audio\bubblesAudio.mp3" autoplay loop></audio> -->
         <audio autoplay>
             <source src="audio/bubblesAudio.mp3" type="audio/mp3" />
           </audio>
         <canvas id="gameCanvas" width="1000" height="800"></canvas>
-<!--         <button id="game-over-btn" type="button">game over screen</button>  -->  
     </section>
 
     <!--game over screen-->
     <section class="end-screen">
         <div>
-            <img src="/images/gameOver.png" alt="game over pic">
+            <img src="images/gameOver.png" alt="game over pic">
         </div>
-<!--         <button id="restart-btn" type="button">restart</button> -->
         <button>
-            <img id="restart-btn" src="/images/restartBtn.png" alt="restart button">
+            <img id="restart-btn" src="images/restartBtn.png" alt="restart button">
         </button>
     </section>
 
 
 
     <!--scripts-->
-    <script src="./js/fallingBubbles.js"> </script>    
-    <script src="./js/player.js" ></script>
-    <script src="./js/playboard.js">  </script>
-    <script type="text/javascript" src="./js/main.js"></script>
+    <script src="js/fallingBubbles.js"> </script>    
+    <script src="js/player.js" ></script>
+    <script src="js/playboard.js">  </script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
